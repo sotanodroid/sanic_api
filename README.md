@@ -9,6 +9,9 @@
 pipenv install -e .
 
 pipenv run python -m app
+
+Миграция: alembic upgrade 030d7b19f51e
+
 #----
 
 Python
@@ -40,8 +43,3 @@ Python
             iii. postgres
             iv. при желании redis/mongo/tarantool
         i. проект опубликован на github/Bitbucket
-
-
-
-![alt text](https://i.imgur.com/rF5pz8N.jpg)
-
