@@ -25,7 +25,6 @@ post = sqlalchemy.Table(
     sqlalchemy.Column('date_modified', sqlalchemy.DateTime(), default=datetime.now()),
     sqlalchemy.Column('text', sqlalchemy.Text()),
     sqlalchemy.Column('comment_id', sqlalchemy.Integer(), sqlalchemy.ForeignKey('comments.id'))
-    #relationship('comments', cascade='all, delete', back_populates='posts'),
 )
 
 
@@ -38,7 +37,6 @@ section = sqlalchemy.Table(
     sqlalchemy.Column('date_created', sqlalchemy.DateTime(), default=datetime.now()),
     sqlalchemy.Column('date_modified', sqlalchemy.DateTime(), default=datetime.now()),
     sqlalchemy.Column('post_id', sqlalchemy.Integer(), sqlalchemy.ForeignKey('posts.id'))
-    #relationship('posts', cascade='all, delete', back_populates='sections'),
 )
 
 
