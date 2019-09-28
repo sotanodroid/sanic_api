@@ -14,6 +14,8 @@ databases = "*"
 e1839a8 = {editable = true,path = "."}
 sanic-api = {editable = true,path = "."}
 app = {editable = true,path = "."}
+alembic = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.6"
