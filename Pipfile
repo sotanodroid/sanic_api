@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+sanic = "*"
+secure = "*"
+environs = "*"
+sanic-envconfig = "*"
+databases = "*"
+e1839a8 = {editable = true,path = "."}
+sanic-api = {editable = true,path = "."}
+app = {editable = true,path = "."}
+
+[requires]
+python_version = "3.6"

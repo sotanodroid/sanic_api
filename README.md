@@ -1,5 +1,4 @@
 # sanic_api
-![alt text](https://i.imgur.com/rF5pz8N.jpg)
 
 тестовое задание для Domclick
 
@@ -41,3 +40,8 @@ Python
             iii. postgres
             iv. при желании redis/mongo/tarantool
         i. проект опубликован на github/Bitbucket
+
+
+
+![alt text](https://i.imgur.com/rF5pz8N.jpg)
+
