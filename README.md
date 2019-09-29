@@ -1,16 +1,13 @@
 # sanic_api
 
-тестовое задание для Domclick
-
             Sanic
     Build Fast. Run Fast.
 
-#---- Инструкции
+## Инструкции
 
-pipenv install -e .
+`pipenv install -e .`
 
-python -m app
+`python -m app`
 
-Миграция: alembic upgrade head
-
-#----
+Миграция: 
+`alembic upgrade head`

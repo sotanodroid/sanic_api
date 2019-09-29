@@ -1,9 +1,9 @@
-from environs import Env
-from sanic import Sanic
-from app.routes import setup_routes
 from databases import Database
 from environs import Env
+from sanic import Sanic
+
 from app.settings import Settings
+from app.views import CommentView, PostView, SectionView
 
 app = Sanic(__name__)
 
@@ -27,7 +27,12 @@ def init():
     app.config.from_object(Settings)
 
     setup_database()
-    setup_routes(app)
+    app.add_route(CommentView.as_view(), '/comments')
+    app.add_route(CommentView.as_view(), '/comments/<comment_id:int>')
+    app.add_route(PostView.as_view(), '/posts')
+    app.add_route(PostView.as_view(), '/posts/<post_id:int>')
+    app.add_route(SectionView.as_view(), '/sections')
+    app.add_route(SectionView.as_view(), '/sections/<section_id:int>')
 
     app.run(
         host=app.config.HOST,
