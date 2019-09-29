@@ -80,5 +80,5 @@ class CommentView(HTTPMethodView):
     async def put(self, request):
         pass
 
-    async def put(self, request, comment_id):
+    async def delete(self, request, comment_id):
         pass
