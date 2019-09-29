@@ -16,6 +16,7 @@ sanic-api = {editable = true,path = "."}
 app = {editable = true,path = "."}
 alembic = "*"
 psycopg2 = "*"
+asyncpg = "*"
 
 [requires]
 python_version = "3.6"
