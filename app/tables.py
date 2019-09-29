@@ -1,7 +1,6 @@
 import sqlalchemy
 
 from datetime import datetime
-from sqlalchemy.orm import relationship
 
 metadata = sqlalchemy.MetaData()
 
