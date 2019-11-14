@@ -1,7 +1,6 @@
 FROM python:3.6-alpine
 
 ARG BUILD_PACKAGES="postgresql-dev"
-ARG BUILD_DEPS="gcc musl-dev"
 
 ENV PYTHONFAULTHANDLER=1 \
     PYTHONUNBUFFERED=1 \
@@ -22,12 +21,14 @@ COPY Pipfile Pipfile.lock ./
 RUN set -ex && \
     apk add --update --no-cache --virtual .build-deps $BUILD_DEPS && \
     pip install pipenv && \
-    pipenv install --deploy --system --ignore-pipfile && \
+    pipenv install --ignore-pipfile && \
     pip uninstall -y pipenv virtualenv virtualenv-clone && \
     apk del --no-cache .build-deps
+
+EXPOSE 8000
 
 WORKDIR /application
 
 COPY . .
 
-CMD python -m app
+CMD ["python", "-m", "app"]

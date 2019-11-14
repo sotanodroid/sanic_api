@@ -35,8 +35,8 @@ class SectionView(HTTPMethodView):
         """
         query = section.insert()
         values = request.json.copy()
-        values['date_created'] = str(datetime.now())
-        values['date_modified'] = str(datetime.now())
+        values['date_created'] = datetime.now()
+        values['date_modified'] = datetime.now()
         await request.app.db.execute(query=query, values=values)
 
         return json({'ok': 'Created'})
@@ -78,8 +78,8 @@ class PostView(HTTPMethodView):
     async def post(self, request):
         query = post.insert()
         values = request.json.copy()
-        values['date_created'] = str(datetime.now())
-        values['date_modified'] = str(datetime.now())
+        values['date_created'] = datetime.now()
+        values['date_modified'] = datetime.now()
         await request.app.db.execute(query=query, values=values)
 
         return json({'ok': 'Created'})
@@ -117,7 +117,7 @@ class CommentView(HTTPMethodView):
     async def post(self, request):
         query = comment.insert()
         values = request.json.copy()
-        values['date_created'] = str(datetime.now())
+        values['date_created'] = datetime.now()
         await request.app.db.execute(query=query, values=values)
 
         return json({'ok': 'Created'})
